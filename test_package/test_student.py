@@ -23,3 +23,28 @@ class TestStudent(unittest.TestCase):
 
     def test_student_str(self):
         self.assertEqual(self.student.__str__(), "bog, dan has major math with gpa: 4.0")
+
+    def test_object_not_created_error_last_name(self):
+        try:
+            p = Student(fname="jeff", major="easy", gpa=1, lname="ssssssss")
+        except ValueError:
+            print("Error with last name")
+
+    def test_object_not_created_error_first_name(self):
+        try:
+            p = Student(fname="jeff", major="easy", gpa=1, lname="ssssssss")
+        except ValueError:
+            print("Error with first name")
+
+    def test_object_not_created_error_major(self):
+        try:
+            p = Student(fname="jeff", major="easy", gpa=1, lname="ssssssss")
+        except ValueError:
+            print("Error with major")
+
+    def test_object_not_created_error_gpa(self):
+        p = Student(fname="jeff", major="easy", gpa=1, lname="ssssssss")
+        if not isinstance(p.gpa, float):
+            print("Error with gpa")
+
+
